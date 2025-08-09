@@ -15,6 +15,6 @@ public class HelloController {
         // throw new IdInvalidException("check mate hoidanit");
 
         // }
-        return "Hello World (Hỏi Dân IT & Eric)";
+        return "Update Hello World (Hỏi Dân IT & Eric)";
     }
 }

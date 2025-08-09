@@ -18,13 +18,14 @@ import vn.hoidanit.jobhunter.domain.RestResponse;
 @RestControllerAdvice
 public class GlobalException {
     @ExceptionHandler(value = { IdInvalidException.class,
-
+            IdInvalidException.class,
             BadCredentialsException.class })
+
     public ResponseEntity<RestResponse<Object>> handleIdException(Exception ex) {
         RestResponse<Object> res = new RestResponse<Object>();
-        res.setStatusCode(HttpStatus.BAD_REQUEST.value());
+        res.setStatusCode(HttpStatus.NOT_FOUND.value());
         res.setError(ex.getMessage());
-        res.setMessage("Thong tin dang nhap khong hop le");
+        res.setMessage("404 Not Found. URL may not exist...");
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
     }
 
